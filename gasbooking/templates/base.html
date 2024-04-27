@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  
+</head>
+<body>
+   <header>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a href=""><i class="bi bi-suitcase2-fill" style="color: white;"></i></a>
+        <p style="color: black;">--</p>
+        <a class="navbar-brand" href="/home"><b>Bharat Gas</b> | Online Gas Booking</a>        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/home">Home</a>
+      </li>
+      
+  
+      <li class="nav-item">
+        <a class="nav-link" href="/connection">Connection</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/connectioninfo"> All Connections</a>
+      </li>
+      
+      
+        <li class="nav-item">
+          <a class="nav-link" href="/bookhistory">Book History</a>
+        </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Logout</a>
+          </li>
+          
+              
+    {% else %}
+
+    <li class="nav-item">
+      <a class="nav-link" href="/register">Register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/login">Login</a>
+    </li>
+      
+
+           
+    {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+    <main>
+    
+
+        {% block content %}
+        
+        {% endblock content %}
+    
+      </main>
+
+      <div class="row bg-light" >
+
+        <div class="col-md-4 p-3">
+          <h5>Quick Links</h5>
+          <hr>
+          <a href="/home" class="anchor">Home</a><br>
+          <a href="/connection" class="anchor">New Connection</a><br>
+          <a href="/book" class="anchor">Book Cylinder</a>
+
+      </div>
+        <div class="col-md-4 p-3">
+
+          
+                <h5>Address</h5>
+                <hr>
+                <b>Bharat Gas </b><br>
+                2nd floor,The Space Building<br>
+                Near Garware College,<br>
+                Pune 411002,<br>
+                Maharashtra.<br>
+                
+            </div>
+            
+            <div class="col-md-4 bg p-3">
+                <h5>Contact Us</h5>
+                <hr>
+                <i class="bi bi-telephone-fill"></i> 9356947669<br>
+                <i class="bi bi-envelope-at-fill"></i> bharatgas12@gmail.com
+            </div>
+    
+    
+    
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+</body>
+</html>
+

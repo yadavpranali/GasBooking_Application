@@ -1,0 +1,86 @@
+
+{% extends 'base.html' %} 
+{% load static %}
+{% load crispy_forms_tags%}
+
+{% block content %}
+{% if connections %}
+
+<!--
+<table class="table table-striped table-bordered table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">email</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Due</th>
+            <th scope="col">Status</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+<tbody>
+
+
+    {% for connection in connections %}
+
+
+<tr>
+<td>{{connection.name}}</td>
+<td>{{connection.email}}</td>
+<td>{{connection.gender}}</td>
+<td>{{connection.marriedstatus}}</td>
+<td>{{connection.adharno}}</td>
+<td>{{connection.address}}</td>
+<td>{{connection.applieddate}}</td>
+<td>{{connection.zipcode}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+-->
+
+<h2 style="text-align: center;text-shadow: 2px;"> Connections </h2>
+
+    
+    <div class="container">
+        <p><button href="" class="btn btn-outline-info" type="">
+            <a href="/connection">Create New Connection </a>
+        </button>
+        </p>
+        {% for connection in connections %}
+        <div class="mt-5 p-3 shadow">
+        
+        <p><strong>Connection id       :</strong>     {{connection.id}}</p><br>
+        <p><strong>Name     :</strong>     {{connection.name}}</p><br>
+        <p><strong>Email    :</strong>     {{connection.email}}</p><br>
+        <p><strong>Mobile Number    :</strong>     {{connection.mobilenumber}}</p><br>
+        <p><strong>Gender    :</strong>     {{connection.gender}}</p><br>
+        <p><strong>Married Status    :</strong>     {{connection.marriedstatus}}</p><br>
+        <p><strong>Adhar No    :</strong>     {{connection.adharno}}</p><br>
+        <p><strong>Address    :</strong>     {{connection.address}}</p><br>
+        <p><strong>Applied Date     :</strong>     {{connection.applieddate}}</p><br>
+        <p><strong>Zipcode    :</strong>     {{connection.zipcode}}</p><br>
+        <p><button href="" class="btn btn-outline-info" type="submit">
+            <a href="{% url 'book-cylinder' connection.id %}">Book Cylinder </a>
+        </button>
+        </p><br>
+        <p><button href="" class="btn btn-outline-info" type="submit">
+            <a href="{% url 'update-connection' connection.id %}">Update Connection </a>
+        </button>
+        </p><br>
+        <a href="{% url 'delete-connection' connection.id %}"><i class="fa fa-trash fa-2x" ></i></a>
+        
+        </div>
+        <strong style="color: red;"><b>____________________________________________________________________________________________________________________________________________________________________________</b></strong>
+        {% endfor %}
+
+    </div>
+    
+    
+    
+
+
+{% endif %}
+{% endblock content %}

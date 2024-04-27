@@ -1,0 +1,116 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+
+
+<style>
+  body {
+      background-image: url('{% static "images/background.jpeg" %}');
+      background-size: cover;
+      background-position: center;
+      
+  }
+</style>
+  
+<div class="row">
+  
+    <div class="col-md-2 p-3 bg-light shadow">
+        <a class="nav-link" href="/home"><h5>Dashbord</h5></a>
+        
+        <br>
+        
+        <a class="nav-link" href="/connection"><h5>New Connection</h5></a>
+        
+        <br>
+        <a class="nav-link" href="/connectioninfo"><h5>All Connection</h5></a>
+        
+        <br>
+
+        <a class="nav-link" href="/book"><h5>Book Cylinder</h5></a>
+        
+        <br>
+        <a class="nav-link" href="/bookhistory"><h5>Book History</h5></a>
+        
+
+    </div>
+    
+    
+    <div class="col-md-9  center" style="padding-left: 3cm;">
+
+      <div class="row" style=" padding-top: 2cm;">
+        <br><br>
+        <div class="col-md-12 p-3" style=" color: rgb(243, 255, 255); text-shadow: black 20px;">
+          <h1 style="font-weight: bolder; text-align: center; text-shadow: 10px 2px 2px rgb(3, 12, 14)">Welcome To Gas Booking <br>
+          Book Your Cylinder Now !!!</h1>
+        </div>
+      </div>      
+      <br><br><br><br><br>
+        <div class="row">
+            
+              
+              
+
+              <div class="row p-3">
+                <div class="col-md-3">
+                  <a href="/connection">
+                    <div class="card">
+                      <img class="card-img-top" src="{% static 'images/cylinder.webp' %}" alt="Notes image">
+                      <div class="card-body">
+                        <h5 class="card-title ">
+                          Create Connection
+                        </h5>
+                        
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/book">
+                      <div class="card">
+                        <img class="card-img-top" src="{% static 'images/cylinder.webp' %}" alt="Notes image">
+                        <div class="card-body">
+                          <h5 class="card-title ">
+                            Book Cylinder
+                          </h5>
+                          
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="/connectioninfo">
+                      <div class="card">
+                        <img class="card-img-top" src="{% static 'images/cylinder.webp' %}" alt="Notes image">
+                        <div class="card-body">
+                          <h5 class="card-title ">
+                            View Connections
+                          </h5>
+                          
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="/bookhistory">
+                      <div class="card">
+                        <img class="card-img-top" src="{% static 'images/cylinder.webp' %}" alt="Notes image">
+                        <div class="card-body">
+                          <h5 class="card-title ">
+                            Booking History
+                          </h5>
+                          
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+                 
+
+
+
+{% endblock content %}
